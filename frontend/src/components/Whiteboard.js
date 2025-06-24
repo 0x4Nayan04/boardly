@@ -167,8 +167,12 @@ function Whiteboard() {
 	};
 
 	const handleClearCanvas = () => {
-		const effectiveRoomId = currentRoom?.roomId || roomId;
-		clearCanvas(effectiveRoomId);
+		if (canvasRef.current && typeof canvasRef.current.clear === 'function') {
+			canvasRef.current.clear();
+		} else {
+			const effectiveRoomId = currentRoom?.roomId || roomId;
+			clearCanvas(effectiveRoomId);
+		}
 	};
 
 	const handleUndo = () => {

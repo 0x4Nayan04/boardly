@@ -51,6 +51,16 @@ const Canvas = forwardRef(({ settings, onDraw, remoteDrawEvent }, ref) => {
 		},
 		getCanvasData: () => {
 			return canvasRef.current?.toDataURL('image/png');
+		},
+		clear: () => {
+			if (ctxRef.current && canvasRef.current) {
+				ctxRef.current.clearRect(
+					0,
+					0,
+					canvasRef.current.width,
+					canvasRef.current.height
+				);
+			}
 		}
 	}));
 

@@ -44,7 +44,7 @@ function Toolbar({
 
 	const tools = [
 		{ id: 'pen', icon: Pen, label: 'Pen' },
-		{ id: 'eraser', icon: Eraser, label: 'Eraser' },
+		{ id: 'eraser', icon: Eraser, label: 'Eraser (pixel)' },
 		{ id: 'rectangle', icon: Square, label: 'Rectangle' },
 		{ id: 'circle', icon: Circle, label: 'Circle' },
 		{ id: 'text', icon: Type, label: 'Text' }
@@ -149,12 +149,12 @@ function Toolbar({
 						<span className='hidden sm:inline'>Redo</span>
 					</Button>
 					<Button
-						variant='outline'
+						variant='destructive'
 						size='sm'
 						onClick={onClear}
-						className='h-9 text-red-600 hover:text-red-700'>
+						className='h-9 ml-2'>
 						<Trash2 className='h-4 w-4 mr-1.5' />
-						<span className='hidden sm:inline'>Clear</span>
+						<span className='hidden sm:inline'>Delete All</span>
 					</Button>
 				</div>
 
